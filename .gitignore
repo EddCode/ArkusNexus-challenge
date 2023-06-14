@@ -1,0 +1,16 @@
+**/node_modules
+**/*-lock.yaml
+
+API/dist
+**/.DS_Store
+
+API/logs/*
+
+API/.env
+Client/.env
+<<<<<<< HEAD
+=======
+Client/.pnpm-store/
+
+
+>>>>>>> 7c3aff0 (features)

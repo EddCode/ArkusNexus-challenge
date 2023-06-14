@@ -1,0 +1,46 @@
+version: "3.7"
+
+services:
+  web:
+    container_name: arkus-web
+    build:
+      context: ./Client
+    ports:
+      - "3000:3000"
+    links:
+      - api
+    volumes:
+      - ./Client:/usr/src/app
+      - /usr/src/app/node_modules
+  api:
+    container_name: arkus-api
+    build:
+      context: ./API
+    environment:
+      - MONGO_DB=mongodb
+      - MONGO_USERNAME="${MONGO_USERNAME}"
+      - MONGO_PASSWORD="${MONGO_PASSWORD}"
+      - AUTH_JWT_SECRET="${AUTH_JWT_SECRET}"
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./API:/usr/src/app
+      - /usr/src/app/node_modules
+    links:
+      - mongodb
+  mongodb:
+    image: mongo:latest
+    restart: always
+    container_name: ArkusMongodb
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME="${MONGO_USERNAME}"
+      - MONGO_INITDB_ROOT_PASSWORD="${MONGO_PASSWORD}"
+    ports:
+      - "27017:27017"
+    volumes:
+      - arkusDB:/data/db
+volumes:
+  arkusDB:
+networks:
+  arkusNet:
+    driver: bridge
