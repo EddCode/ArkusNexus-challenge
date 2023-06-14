@@ -1,22 +1,3 @@
-<<<<<<< HEAD
-import { useEffect } from 'react'
-import { useQuery } from '@tanstack/react-query'
-import useFetch from '../../shared/hooks/useFetch'
-
-function useLogin () {
-  const { data, fetcher } = useFetch()
-  const { refetch } = useQuery(['auth'], login, { enabled: false })
-
-  useEffect(() => {
-    console.log({ data })
-  }, [data])
-
-  async function login () {
-    const body = JSON.stringify({
-      email: 'superadmin@arkusnexus.com',
-      password: '123456'
-    })
-=======
 import { useState, useEffect } from 'react'
 import { useQuery } from '@tanstack/react-query'
 import useFetch from '../../shared/hooks/useFetch'
@@ -44,21 +25,11 @@ function useLogin () {
   async function login () {
     setIsLoading(true)
     const body = JSON.stringify(loginValues)
->>>>>>> 7c3aff0 (features)
 
     const data = await fetcher('user/login', {
       method: 'POST',
       body
     })
-<<<<<<< HEAD
-    return data
-  }
-
-  const handleLogin = () => refetch()
-
-  return {
-    handleLogin
-=======
 
     return data
   }
@@ -68,7 +39,6 @@ function useLogin () {
     isLoading,
     isError,
     error
->>>>>>> 7c3aff0 (features)
   }
 }
 

@@ -2,7 +2,7 @@ import { VscSignOut } from 'react-icons/vsc'
 import { SidebarContainer, SidebarFooter, SidebarHeader, SidebarMenu, SidebarMenuItem } from './Sidebar.styles'
 import { AiOutlineUsergroupDelete, AiOutlineBank } from 'react-icons/ai'
 
-import arkusLogo from '../../../public/arkus.svg'
+import arkusLogo from '../../app/assets/arkus.svg'
 import { useAuth } from '../../app/context/auth'
 import { Link } from 'react-router-dom'
 
@@ -16,18 +16,18 @@ function Sidebar () {
         <SidebarMenu>
           <SidebarMenuItem>
             <Link to="/users">
-              <AiOutlineUsergroupDelete size={30}/>
+              <AiOutlineUsergroupDelete size={24}/>
             </Link>
           </SidebarMenuItem>
           <SidebarMenuItem>
             <Link to="/accounts">
-              <AiOutlineBank size={30} />
+              <AiOutlineBank size={24} />
             </Link>
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>
       <SidebarFooter onClick={logout}>
-        <VscSignOut size={35} />
+        <VscSignOut size={24} />
       </SidebarFooter>
     </SidebarContainer>
   )

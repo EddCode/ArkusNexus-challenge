@@ -7,10 +7,7 @@ import signToken from '../../shared/infraestructure/jwt/sign'
 interface UserWithToken {
   id: string;
   email: string;
-<<<<<<< HEAD
-=======
   name: string;
->>>>>>> 7c3aff0 (features)
   role: string;
   token: string;
 }
@@ -40,10 +37,7 @@ function UserUseCase(repository: UserRepository) {
       id: user.id, 
       email: user.email,
       role: user.role,
-<<<<<<< HEAD
-=======
       name: user.name,
->>>>>>> 7c3aff0 (features)
       token 
     }
   }

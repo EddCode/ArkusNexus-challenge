@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import styled from 'styled-components'
-=======
 import styled, { css } from 'styled-components'
->>>>>>> 7c3aff0 (features)
 
 const background = {
   primary: 'var(--primary-color)',
@@ -16,8 +12,6 @@ const Root = styled.main`
   gap: .8rem;
   min-height: 100vh;
   background: ${props => background[props.background] || 'var(--white)'};
-<<<<<<< HEAD
-=======
 
   ${props => props.dashboard === 'true' && css`
     display: grid;
@@ -30,7 +24,6 @@ const Root = styled.main`
       grid-row: 1 / span 3;
     }
   `}
->>>>>>> 7c3aff0 (features)
 `
 
 export const Container = styled.div`

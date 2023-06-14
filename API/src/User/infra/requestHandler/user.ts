@@ -12,10 +12,6 @@ const useCases = UserUseCase(repository)
 export async function login(req: Request, res: Response) {
   try {
     const { email, password } = req.body
-<<<<<<< HEAD
-    console.log(req.body, '===== req.body')
-=======
->>>>>>> 7c3aff0 (features)
     const result = await useCases.login(email, password)
     res.status(httpCode.OK.status).json(result)
   }catch(err: any) {

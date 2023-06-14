@@ -31,8 +31,6 @@ export const Input = style.input`
   line-height: 1.25rem;
 `
 
-<<<<<<< HEAD
-=======
 export const ErrorText = style.span`
   display: inline-block;
   margin: .5em 0;
@@ -40,5 +38,4 @@ export const ErrorText = style.span`
   color: var(--error-color);
 `
 
->>>>>>> 7c3aff0 (features)
 export default Form

@@ -6,10 +6,6 @@ function useFetch () {
       },
       ...options
     })
-<<<<<<< HEAD
-    const data = await response.json()
-    return data
-=======
 
     if (response.status >= 400) {
       const { message } = await response.json()
@@ -17,7 +13,6 @@ function useFetch () {
     }
 
     return await response.json()
->>>>>>> 7c3aff0 (features)
   }
 
   return {

@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-import Form, { InputGroup, Label, Input } from './Login.styles'
-import Button from '../Button'
-import useLogin from '../../features/Login'
-
-const Login = () => {
-  const { handleLogin } = useLogin()
-=======
 import Form, { InputGroup, Label, Input, ErrorText } from './Login.styles'
 import Button from '../Button'
 import useLogin from '@/features/Login'
@@ -21,23 +13,12 @@ const Login = () => {
     const password = passwordRef.current.value
     setLoginValues({ email, password })
   }
->>>>>>> 7c3aff0 (features)
 
   return (
     <div>
       <Form>
         <InputGroup>
           <Label>Email</Label>
-<<<<<<< HEAD
-          <Input type="email" placeholder="Use your arkusnexus email" />
-        </InputGroup>
-        <InputGroup>
-          <Label>Password</Label>
-          <Input type="email" placeholder="Type your password" />
-        </InputGroup>
-      </Form>
-      <Button onClick={handleLogin}>Log in</Button>
-=======
           <Input type="email" name='email' placeholder="Use your arkusnexus email" ref={emailRef} />
         </InputGroup>
         <InputGroup>
@@ -49,7 +30,6 @@ const Login = () => {
       <Button onClick={handleClick}>
         { isLoading ? 'loading...' : 'Log in'}
       </Button>
->>>>>>> 7c3aff0 (features)
     </div>
   )
 }
