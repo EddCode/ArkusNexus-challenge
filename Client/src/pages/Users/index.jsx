@@ -1,4 +1,4 @@
-import UserTable from '../../features/Users'
+import UserTable from '@/features/Users/list'
 
 function User () {
   return (

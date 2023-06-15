@@ -23,6 +23,11 @@ function MongoRepository (): UserRepository {
     return result
   }
 
+  const getAll = async (): Promise<UserEntity[]> => {
+    const result = await Users.find() as UserEntity[]
+    return result
+  }
+
   const update = async (id: string, user: any): Promise<void> => {
     await Users.updateOne({ _id: id }, user)
   }
@@ -36,6 +41,7 @@ function MongoRepository (): UserRepository {
     findByEmail,
     create,
     getById,
+    getAll,
     update,
     remove
   }

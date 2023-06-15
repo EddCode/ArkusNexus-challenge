@@ -2,6 +2,7 @@ export interface UserRepository {
   findByEmail: (email: string) => Promise<UserEntity | null>
   create: (user: UserEntity) => Promise<void>
   getById: (id: string) => Promise<UserEntity | null>
+  getAll: () => Promise<UserEntity[]>
   update: (id: string, user: any) => Promise<void>
   remove: (id: string) => Promise<void>
 }

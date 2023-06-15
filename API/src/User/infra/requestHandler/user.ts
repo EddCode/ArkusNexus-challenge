@@ -50,17 +50,13 @@ export async function retrive(req: Request, res: Response) {
     const { id } = req.params
     const { jwtDecode } = req.body
 
-    if (!id) {
-      throw new Error('Id is required')
-    }
-
     if (jwtDecode.role === ROLES.USER && jwtDecode.id != id) {
       return res.status(httpCode.UNAUTHORIZED.status).json({ message: 'You are not authorized to perform this action' })
     }
 
-    const user = await useCases.getById(id)
+    const result = !id ? await useCases.getAll() :  await useCases.getById(id)
 
-    res.status(httpCode.OK.status).json({ message: httpCode.OK.message, data: user })
+    res.status(httpCode.OK.status).json({ message: httpCode.OK.message, data: result })
   } catch (error: any) {
     const { status, message} = GetErrorHandler(error)
     logger.error(`Error creating user: ${message} - ${status}`)

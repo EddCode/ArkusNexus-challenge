@@ -52,6 +52,24 @@ function UserUseCase(repository: UserRepository) {
     return user
   }
 
+  const getAll = async (): Promise<User[] > => {
+    try {
+      const users = await repository.getAll()
+
+      return users.map(user => ({
+        id: user.id,
+        email: user.email,
+        name: user.name,
+        role: user.role,
+        resume: user.resume,
+        englishLevel: user.englishLevel,
+        skills: user.skills
+      }))
+    } catch (error: any) {
+      throw new Error(error.message)
+    }
+  }
+
   const getById = async (id: string): Promise<User| null> => {
     try {
       const user = await repository.getById(id)
@@ -142,6 +160,7 @@ function UserUseCase(repository: UserRepository) {
     login,
     create,
     getById,
+    getAll,
     update,
     deleteById
   }
