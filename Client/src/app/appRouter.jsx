@@ -4,6 +4,9 @@ import BaseLayout from './layouts/BaseLayout'
 
 import LoginPage from '../pages/Login'
 import ProtectedLayout from './layouts/ProtectedLayout'
+import Accounts from '@/pages/Account'
+import Dashboard from '@/pages/Dashboard'
+import Users from '@/pages/Users'
 
 const appRouter = createBrowserRouter([
   {
@@ -22,15 +25,15 @@ const appRouter = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <h1>dashboard</h1>
+        element: <Dashboard />
       },
       {
         path: '/users',
-        element: <h1>users</h1>
+        element: <Users />
       },
       {
         path: '/accounts',
-        element: <h1>accounts</h1>
+        element: <Accounts />
       }
     ]
   }

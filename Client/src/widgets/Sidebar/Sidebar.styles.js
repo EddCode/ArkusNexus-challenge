@@ -11,8 +11,12 @@ export const SidebarHeader = styled.div`
     padding: 1rem 0;
     margin: 0 auto;
 
-    & > img {
+    & img {
         width: 2.7rem;
+    }
+
+    & .active {
+        color: var(--second-color);
     }
 `
 

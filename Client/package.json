@@ -12,6 +12,7 @@
   "dependencies": {
     "@tanstack/eslint-plugin-query": "4.29.9",
     "@tanstack/react-query": "4.29.13",
+    "@tanstack/react-table": "^8.9.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "4.9.0",

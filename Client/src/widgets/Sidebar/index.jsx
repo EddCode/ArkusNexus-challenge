@@ -4,23 +4,28 @@ import { AiOutlineUsergroupDelete, AiOutlineBank } from 'react-icons/ai'
 
 import arkusLogo from '../../app/assets/arkus.svg'
 import { useAuth } from '../../app/context/auth'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 function Sidebar () {
   const { logout } = useAuth()
+  const location = useLocation()
+
+  const match = path => location.pathname.includes(path)
 
   return (
     <SidebarContainer>
       <SidebarHeader>
-        <img src={arkusLogo} alt="arkus logo" srcSet=""/>
+        <Link to="/" className={match('/') ? 'active' : ''}>
+          <img src={arkusLogo} alt="arkus logo" srcSet=""/>
+        </Link>
         <SidebarMenu>
           <SidebarMenuItem>
-            <Link to="/users">
+            <Link to="/users" className={match('/users') ? 'active' : ''}>
               <AiOutlineUsergroupDelete size={24}/>
             </Link>
           </SidebarMenuItem>
           <SidebarMenuItem>
-            <Link to="/accounts">
+            <Link to="/accounts" className={match('/accounts') ? 'active' : ''}>
               <AiOutlineBank size={24} />
             </Link>
           </SidebarMenuItem>

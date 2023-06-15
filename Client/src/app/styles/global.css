@@ -1,14 +1,14 @@
 :root {
   --primary-color: #59179a;
   --second-color: #18bdcc;
-	--second-color-hover: #1598b2;
+  --second-color-hover: #1598b2;
   --dark-gray: #414e54;
   --light-gray: #7a8f99;
-	--lighter-gray: #dfe3eb;
+  --lighter-gray: #dfe3eb;
   --gray: #414e54;
   --white: #fff;
-	--error-color: #eb5769;
-	--body-background: #240046;
+  --error-color: #eb5769;
+  --body-background: #240046;
 
   --border-radius: 8px;
 }
@@ -16,10 +16,7 @@
 * {
 	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
-<<<<<<< HEAD
-=======
 	user-select: none;
->>>>>>> 7c3aff0 (features)
 }
 
 html, body, div, span, applet, object, iframe,
@@ -64,4 +61,35 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+
+table {
+	border-collapse: collapse;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+th, td {
+	padding: 15px;
+	background-color: rgba(255, 255, 255, 0.2);
+	color: var(--gray);
+}
+th {
+	text-align: left;
+}
+thead th {
+	background-color: #55608f;
+	color: var(--white);
+}
+tbody tr:hover {
+	background-color: rgba(255, 255, 255, 0.3);
+}
+tbody td {
+	position: relative;
+}
+tbody td:hover:before {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	z-index: -1;
 }
