@@ -1,18 +1,18 @@
 import Table from '@/shared/components/Table'
-import Button from '@/widgets/Button'
+import CreateUserModal from '../../create/ui'
 import useGetUser from '../model/hook/useGetUser'
 
 import columns from '../model/table'
 import { Actions, Container } from './Users.styles'
 
 function UserTable () {
-  const {users} = useGetUser()
+  const { users } = useGetUser()
 
   return (
     <Container>
       <Actions>
         <div>
-          <Button>Create User</Button>
+          <CreateUserModal />
         </div>
       </Actions>
       <Table columns={columns} data={users.data}/>

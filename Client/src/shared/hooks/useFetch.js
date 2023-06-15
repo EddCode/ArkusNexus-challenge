@@ -7,11 +7,12 @@ function useFetch () {
     const headers = {
       'Content-Type': 'application/json'
     }
+
     if (options.token) {
       headers.Authorization = `Bearer ${getValue('user').token}`
       delete options.token
     }
-    console.log(headers)
+
     const response = await fetch(`http://localhost:8080/api/v1/${endpoint}`, {
       headers: {
         ...headers

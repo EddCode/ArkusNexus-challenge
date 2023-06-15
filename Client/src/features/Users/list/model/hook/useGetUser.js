@@ -14,7 +14,7 @@ function useGetUser () {
   }
 
   return {
-    users: data,
+    users: data || { data: [] },
     error,
     isLoading,
     isError
