@@ -1,4 +1,4 @@
-import Form, { InputGroup, Label, Input, ErrorText } from './Login.styles'
+import Form, { InputGroup, Label, Input, ErrorText } from '@/widgets/Form/Form.styled'
 import Button from '../Button'
 import useLogin from '@/features/Login'
 import { useRef } from 'react'

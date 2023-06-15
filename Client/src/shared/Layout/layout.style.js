@@ -37,9 +37,9 @@ export const Container = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  align-self: stretch;
   gap: .8rem;
   max-height: calc(100vh - 8.6rem);
-  align-self: start;
   position: relative;
 `
 

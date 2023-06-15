@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import { Select } from 'antd'
-import Form, { InputGroup, Label, Input, ErrorText } from './CreateUserForm'
+import Form, { InputGroup, Label, Input, ErrorText } from '@/widgets/Form/Form.styled'
 
 function CreateUserForm ({ emailRef, nameRef, passwordRef, rolRef, error }) {
   const handleChange = (value) => {

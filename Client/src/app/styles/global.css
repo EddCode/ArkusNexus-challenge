@@ -11,6 +11,8 @@
   --body-background: #240046;
 
   --border-radius: 8px;
+	--border-focus: 2px solid var(--primary-color);
+	--shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -66,7 +68,7 @@ table {
 table {
 	border-collapse: collapse;
 	overflow: hidden;
-	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+	box-shadow: var(--shadow);
 }
 th, td {
 	padding: 15px;
