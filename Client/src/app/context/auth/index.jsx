@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect, useMemo, useContext } from 'react'
+import { createContext, useState, useEffect, useContext } from 'react'
 import PropTypes from 'prop-types'
 import useLocalStorage from '../../../shared/hooks/useLocalStorage'
 
@@ -16,7 +16,7 @@ const AuthProvider = ({ children }) => {
   }, [])
 
   const login = (user) => {
-    const storageUser = { email: user.email, token: user.token, role: user.role, name: user.name }
+    const storageUser = { id: user.id, email: user.email, token: user.token, role: user.role, name: user.name }
     setUser(storageUser)
     setValue('user', storageUser)
     window.location = '/'
@@ -28,7 +28,7 @@ const AuthProvider = ({ children }) => {
     window.location = '/login'
   }
 
-  const contextValue = useMemo(_ => ({ user, login, logout }), [user])
+  const contextValue = _ => ({ user, login, logout })
 
   return (
     <AuthContext.Provider value={contextValue}>

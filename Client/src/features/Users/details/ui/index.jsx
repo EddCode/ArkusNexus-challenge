@@ -1,52 +1,65 @@
 import PropTypes from 'prop-types'
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { useQuery } from '@tanstack/react-query'
+
 import UpdateForm from '../../update/ui'
+import useGetOneUser from '../lib/hooks'
 import DetailsWrapper, { UserInfo, UserInfoTextWrapper, UserTitle, UserUpdateWrapper } from './Details.styles'
 
-function UserDetails ({ user }) {
+function UserDetails ({ id }) {
+  const { submit } = useGetOneUser()
+  const { data } = useQuery(['user'], getUserData)
   const { current: emptyField } = useRef('-----')
+
+  const [userData, setUser] = useState({ })
+
+  useEffect(() => {
+    data && setUser(data)
+  }, [data])
+
+  async function getUserData () {
+    try {
+      const data = await submit(id)
+      return data
+    } catch (error) {
+      return Promise.reject(error.message)
+    }
+  }
+
   return (
     <DetailsWrapper>
       <UserInfo>
-        <UserTitle>{ user.name }</UserTitle>
+        <UserTitle>{ userData?.name }</UserTitle>
         <UserInfoTextWrapper>
           <label>Email:</label>
-          <span>{ user.email }</span>
-        </UserInfoTextWrapper>
-        <UserInfoTextWrapper>
-          <label>Role:</label>
-          <span>{ user.role }</span>
+          <span>{ userData.email }</span>
         </UserInfoTextWrapper>
         <UserInfoTextWrapper>
           <label>English Level:</label>
-          <span>{ user.englishLevel || emptyField }</span>
+          <span>{ userData.englishLevel || emptyField }</span>
         </UserInfoTextWrapper>
         <UserInfoTextWrapper>
           <label>Skills:</label>
-          <span>{ user.skills || emptyField }</span>
+          <span>{ userData.skills || emptyField }</span>
         </UserInfoTextWrapper>
         <UserInfoTextWrapper>
           <label>Resume:</label>
-          <span>{ user.resume || emptyField }</span>
+          <span>{ userData.resume || emptyField }</span>
+        </UserInfoTextWrapper>
+        <UserInfoTextWrapper>
+          <label>Role:</label>
+          <span>{ userData.role }</span>
         </UserInfoTextWrapper>
       </UserInfo>
       <UserUpdateWrapper>
-        <UpdateForm idAdmin={user.role}/>
+        <UpdateForm user={userData} updateUser={setUser} />
       </UserUpdateWrapper>
     </DetailsWrapper>
   )
 }
 
 UserDetails.propTypes = {
-  user: PropTypes.shape({
-    id: PropTypes.string,
-    name: PropTypes.string,
-    email: PropTypes.string,
-    role: PropTypes.string,
-    englishLevel: PropTypes.string,
-    skills: PropTypes.string,
-    resume: PropTypes.string
-  })
+  id: PropTypes.string
 }
 
 export default UserDetails

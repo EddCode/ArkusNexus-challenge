@@ -1,12 +1,12 @@
 import UserTable from '@/features/Users/list'
-import { useAuth } from '@/app/context/auth'
+import useLocalStorage from '@/shared/hooks/useLocalStorage'
 import UserDetails from '@/features/Users/details/ui'
 
 function User () {
-  const { user } = useAuth()
+  const user = useLocalStorage().getValue('user')
 
   if (user.role === 'user') {
-    return <UserDetails user={user}/>
+    return <UserDetails id={user.id}/>
   }
 
   return <UserTable />
