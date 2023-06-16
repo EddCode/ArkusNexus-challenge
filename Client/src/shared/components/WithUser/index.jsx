@@ -5,7 +5,7 @@ function withUser (Component) {
     const { user } = useAuth()
 
     return (
-      <Component user={user.token}/>
+      <Component token={user.token}/>
     )
   }
   return WithUser

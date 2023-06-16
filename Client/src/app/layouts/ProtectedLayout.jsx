@@ -6,8 +6,8 @@ import withUser from '../../shared/components/WithUser'
 import Sidebar from '../../widgets/Sidebar'
 import Header from '../../widgets/Header'
 
-const DashboardLayout = ({ user }) => {
-  if (!user) {
+const DashboardLayout = ({ token }) => {
+  if (!token) {
     return <Navigate to='/login' />
   }
 
@@ -21,11 +21,7 @@ const DashboardLayout = ({ user }) => {
 }
 
 DashboardLayout.propTypes = {
-  user: PropTypes.shape({
-    token: PropTypes.string,
-    email: PropTypes.string,
-    role: PropTypes.string
-  })
+  token: PropTypes.string
 }
 
 const ProtectedLayout = withUser(DashboardLayout)

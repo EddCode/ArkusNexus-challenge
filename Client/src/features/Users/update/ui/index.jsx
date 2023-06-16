@@ -47,28 +47,28 @@ function UpdateForm ({ user, updateUser }) {
 
   return (
     <Form>
-      { contextHolder }
+      {contextHolder}
       <InputGroup>
         <Label htmlFor="name">Name</Label>
         <Input type="text" id="name" name="name" placeholder="Jhone Doe" onChange={handleChange} />
       </InputGroup>
-      { isAdmin && (
+      {isAdmin && (
         <>
           <InputGroup>
             <Label htmlFor="email">Email</Label>
             <Input type="email" id="email" name="email" placeholder="jone-doe@arkusnexus.com" onChange={handleChange} />
           </InputGroup>
-      <InputGroup>
-        <Label htmlFor="Passwod">Passwod</Label>
-        <Input type="password" id="password" name="password" placeholder="type a passowrd" onChange={handleChange} />
-      </InputGroup>
+          <InputGroup>
+            <Label htmlFor="Passwod">Passwod</Label>
+            <Input type="password" id="password" name="password" placeholder="type a passowrd" onChange={handleChange} />
+          </InputGroup>
         </>
       )}
-      { !isAdmin && (
+      {!isAdmin && (
         <>
           <InputGroup>
             <Label htmlFor="role">English level</Label>
-            <Input type="text" id="englishLevel" name="englishLevel" placeholder="B2" onChange={handleChange}/>
+            <Input type="text" id="englishLevel" name="englishLevel" placeholder="B2" onChange={handleChange} />
           </InputGroup>
           <InputGroup>
             <Label htmlFor="role">Skills</Label>
