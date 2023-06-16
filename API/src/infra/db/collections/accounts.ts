@@ -1,10 +1,11 @@
 import mongoose from "mongoose"
 import Schema = mongoose.Schema
+import generateUuid from "../../../shared/infraestructure/uuid/generate"
 
 const AccountSchema = new Schema({
   _id: {
-    type: Schema.Types.ObjectId,
-    required: true,
+    type: String,
+    default: () => generateUuid(),
   },
   accountName: {
     type: String,
@@ -19,8 +20,7 @@ const AccountSchema = new Schema({
     required: [true, "Responsability Center is required"],
   },
   teamsQuery: {
-    type: String,
-    required: [true, "Teams Query is required"],
+    type: String
   },
 }, { timestamps: true, _id: false })
 

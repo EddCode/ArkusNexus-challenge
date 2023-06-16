@@ -19,8 +19,23 @@ export const verifyToken = (req: Request, res: Response, next: NextFunction ) =>
     const token = authHeader.split(' ')[1]
     const decoded = jwt.verify(token, config.jwt.token)
     req.body.jwtDecode = decoded
+    next()
   } catch (error) {
-    res.status(httpCode.UNAUTHORIZED.status).send({
+    return res.status(httpCode.UNAUTHORIZED.status).send({
+      message: httpCode.UNAUTHORIZED.message
+    })
+  }
+
+}
+
+export const verifyUserRol = (roles: [string, string?, string?]) => (req: Request, res: Response, next: NextFunction ) => {
+  try {
+    const { jwtDecode } = req.body
+    if (!roles.includes(jwtDecode.role)) {
+      throw new Error('Unauthorized')
+    }
+  } catch (error) {
+    return res.status(httpCode.UNAUTHORIZED.status).send({
       message: httpCode.UNAUTHORIZED.message
     })
   }

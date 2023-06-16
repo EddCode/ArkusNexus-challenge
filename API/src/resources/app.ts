@@ -2,7 +2,8 @@ import express from 'express'
 import morgan from 'morgan'
 import cors from 'cors'
 import logger from '../shared/infraestructure/logs'
-import routes from '../User/infra/routeHandler'
+import userRoutes from '../User/infra/routeHandler'
+import accountsRoutes  from '../Account/infra/routeHandler'
 
 const app = express()
 
@@ -15,7 +16,8 @@ app.use(express.urlencoded({
   parameterLimit: 50000 
 }))
 
-routes(app)
+userRoutes(app)
+accountsRoutes(app)
       
 
 export default (port = 8080) => {

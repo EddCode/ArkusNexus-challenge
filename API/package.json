@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"description": "",
 	"scripts": {
-		"start": "nodemon ./src/index.ts",
+		"start": "nodemon  ./src/index.ts",
 		"lint": "eslint --ext .ts src",
 		"lint:fix": "eslint --ext .ts src --fix",
 		"test": "jest --verbose --coverage"
