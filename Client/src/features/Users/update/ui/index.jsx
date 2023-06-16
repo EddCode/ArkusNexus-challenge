@@ -2,7 +2,9 @@ import { useRef, useState } from 'react'
 import PropTypes from 'prop-types'
 import { AiOutlineLoading3Quarters } from 'react-icons/ai'
 import { Spin, message } from 'antd'
-import Form, { Input, InputGroup, Label, ErrorText } from '@/widgets/Form/Form.styled'
+import { useAuth } from '@/app/context/auth'
+
+import Form, { Input, InputGroup, Label } from '@/widgets/Form/Form.styled'
 
 import Button from '@/widgets/Button'
 import useUpdate from '../lib/useUpdate'
@@ -10,11 +12,11 @@ import useUpdate from '../lib/useUpdate'
 function UpdateForm ({ user, updateUser }) {
   const [messageApi, contextHolder] = message.useMessage()
   const { submit } = useUpdate()
+  const { user: loggedUser } = useAuth()
 
   const [isLoading, setIsLoading] = useState(false)
-  const [error, setError] = useState({ isError: false, message: '' })
 
-  const { current: isAdmin } = useRef(user.role === 'admin')
+  const { current: isAdmin } = useRef(['super admin', 'admin'].includes(loggedUser.role))
   const { current: dataToUpdate } = useRef({})
 
   const handleChange = event => {
@@ -39,7 +41,7 @@ function UpdateForm ({ user, updateUser }) {
       setIsLoading(false)
     } catch (error) {
       setIsLoading(false)
-      setError({ isError: true, message: error.message })
+      messageApi.error(error.message || error)
     }
   }
 
@@ -78,7 +80,6 @@ function UpdateForm ({ user, updateUser }) {
           </InputGroup>
         </>
       )}
-      { error.isError && <ErrorText>{ error.message}</ErrorText>}
       <Button type='button' onClick={handleClick}>
         {isLoading && <Spin indicator={AiOutlineLoading3Quarters} />}
         Update

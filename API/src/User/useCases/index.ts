@@ -94,7 +94,6 @@ function UserUseCase(repository: UserRepository) {
       const { resume, skills, englishLevel, password, email, name } = userInfo
       const hashPassword = password ? await hashString(password) : undefined
 
-      if (!email && !name && !password) throw new Error('Missing fields')
       if (resume || skills || englishLevel) throw new Error('Unauthorized to update resume, skills and english level')
 
       const userUpdate: User = {}

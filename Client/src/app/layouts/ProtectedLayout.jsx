@@ -22,9 +22,9 @@ const DashboardLayout = ({ user }) => {
 
 DashboardLayout.propTypes = {
   user: PropTypes.shape({
-    token: PropTypes.string.isRequired,
-    email: PropTypes.string.isRequired,
-    role: PropTypes.string.isRequired
+    token: PropTypes.string,
+    email: PropTypes.string,
+    role: PropTypes.string
   })
 }
 

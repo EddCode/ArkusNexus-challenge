@@ -1,11 +1,11 @@
-import { createContext, useState, useEffect, useContext } from 'react'
+import { createContext, useState, useEffect, useContext, useMemo } from 'react'
 import PropTypes from 'prop-types'
 import useLocalStorage from '../../../shared/hooks/useLocalStorage'
 
 export const AuthContext = createContext()
 
 const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState({})
   const { setValue, getValue, removeValue } = useLocalStorage()
 
   useEffect(() => {
@@ -23,12 +23,12 @@ const AuthProvider = ({ children }) => {
   }
 
   const logout = () => {
-    setUser(null)
+    setUser({})
     removeValue('user')
     window.location = '/login'
   }
 
-  const contextValue = _ => ({ user, login, logout })
+  const contextValue = { user, login, logout }
 
   return (
     <AuthContext.Provider value={contextValue}>

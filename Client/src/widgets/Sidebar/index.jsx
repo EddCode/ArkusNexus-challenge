@@ -1,15 +1,13 @@
 import { VscSignOut } from 'react-icons/vsc'
 import { SidebarContainer, SidebarFooter, SidebarHeader, SidebarMenu, SidebarMenuItem } from './Sidebar.styles'
 import { AiOutlineUsergroupDelete, AiOutlineBank } from 'react-icons/ai'
-
-import useLocalStorage from '@/shared/hooks/useLocalStorage'
-import arkusLogo from '@/app/assets/arkus.svg'
-import { useAuth } from '@/app/context/auth'
 import { Link, useLocation } from 'react-router-dom'
 
+import { useAuth } from '@/app/context/auth'
+import arkusLogo from '@/app/assets/arkus.svg'
+
 function Sidebar () {
-  const { logout } = useAuth()
-  const user = useLocalStorage().getValue('user')
+  const { user, logout } = useAuth()
   const location = useLocation()
 
   const match = path => location.pathname.includes(path)

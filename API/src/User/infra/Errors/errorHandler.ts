@@ -77,6 +77,10 @@ export const UpdateErrorHandler = (error: Error): {status: number, message: stri
       status: httpCode.BAD_REQUEST.status,
       message: "You cannot update your own email"
     },
+    "Missing fields": {
+      status: httpCode.BAD_REQUEST.status,
+      message: "Missing fields"
+    },
     "Unauthorized to update resume, skills and english level": {
       status: httpCode.UNAUTHORIZED.status,
       message: "You are not authorized to update resume, skills and english level"

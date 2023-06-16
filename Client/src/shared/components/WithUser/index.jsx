@@ -1,11 +1,11 @@
-import useLocalStorage from '../../hooks/useLocalStorage'
+import { useAuth } from '@/app/context/auth'
 
 function withUser (Component) {
   const WithUser = _ => {
-    const { getValue } = useLocalStorage()
+    const { user } = useAuth()
 
     return (
-      <Component user={getValue('user')}/>
+      <Component user={user.token}/>
     )
   }
   return WithUser

@@ -81,7 +81,7 @@ export async function update(req: Request, res: Response) {
       throw new Error('Id is required')
     }   
 
-    if (jwtDecode.id !== id) {
+    if (jwtDecode.role === ROLES.USER && jwtDecode.id !== id) {
       return res.status(httpCode.UNAUTHORIZED.status).json({ message: 'Unauthorized' })
     }
 
