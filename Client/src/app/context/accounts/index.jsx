@@ -4,7 +4,7 @@ import { createContext, useContext, useState } from 'react'
 const AccountsContext = createContext()
 
 const AccountProvider = ({ children }) => {
-  const [account, setAccount] = useState({})
+  const [account, setAccount] = useState([])
 
   return (
     <AccountsContext.Provider value={{ account, setAccount }}>

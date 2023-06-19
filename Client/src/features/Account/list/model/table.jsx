@@ -16,7 +16,7 @@ const accountTable = [
     header: 'Responsable'
   }),
   columnHelper.accessor('id', {
-    cell: info => (<TableAccions id={info.getValue()} />),
+    cell: info => <TableAccions id={info.getValue()} />,
     header: () => 'Accions'
   })
 ]
