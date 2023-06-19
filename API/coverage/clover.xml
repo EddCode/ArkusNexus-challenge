@@ -1,177 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1686504974204" clover="3.2.0">
-  <project timestamp="1686504974204" name="All files">
-    <metrics statements="120" coveredstatements="40" conditionals="34" coveredconditionals="10" methods="34" coveredmethods="7" elements="188" coveredelements="57" complexity="0" loc="120" ncloc="120" packages="6" files="11" classes="11"/>
-    <package name="User.domain">
-      <metrics statements="69" coveredstatements="11" conditionals="18" coveredconditionals="0" methods="20" coveredmethods="0"/>
-      <file name="UserEmail.ts" path="/Users/edgar/Projects/Github/ArkusNexus-challenge/API/src/User/domain/UserEmail.ts">
-        <metrics statements="13" coveredstatements="1" conditionals="4" coveredconditionals="0" methods="5" coveredmethods="0"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="3" count="0" type="stmt"/>
-        <line num="4" count="0" type="stmt"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="11" count="0" type="stmt"/>
-        <line num="16" count="0" type="cond" truecount="0" falsecount="3"/>
-        <line num="17" count="0" type="stmt"/>
-        <line num="22" count="0" type="stmt"/>
-        <line num="24" count="0" type="cond" truecount="0" falsecount="1"/>
-        <line num="25" count="0" type="stmt"/>
-      </file>
-      <file name="UserEntity.ts" path="/Users/edgar/Projects/Github/ArkusNexus-challenge/API/src/User/domain/UserEntity.ts">
-        <metrics statements="17" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="6" count="1" type="stmt"/>
-        <line num="14" count="1" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
-        <line num="17" count="0" type="stmt"/>
-        <line num="18" count="0" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="27" count="0" type="stmt"/>
-        <line num="30" count="0" type="stmt"/>
-        <line num="33" count="0" type="stmt"/>
-        <line num="36" count="0" type="stmt"/>
-      </file>
-      <file name="UserId.ts" path="/Users/edgar/Projects/Github/ArkusNexus-challenge/API/src/User/domain/UserId.ts">
-        <metrics statements="9" coveredstatements="1" conditionals="4" coveredconditionals="0" methods="3" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="0" type="stmt"/>
-        <line num="4" count="0" type="stmt"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="9" count="0" type="cond" truecount="0" falsecount="3"/>
-        <line num="10" count="0" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
-        <line num="16" count="0" type="cond" truecount="0" falsecount="1"/>
-        <line num="17" count="0" type="stmt"/>
-      </file>
-      <file name="UserPassword.ts" path="/Users/edgar/Projects/Github/ArkusNexus-challenge/API/src/User/domain/UserPassword.ts">
-        <metrics statements="12" coveredstatements="1" conditionals="4" coveredconditionals="0" methods="4" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="0" type="stmt"/>
-        <line num="3" count="0" type="stmt"/>
-        <line num="4" count="0" type="stmt"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="10" count="0" type="stmt"/>
-        <line num="15" count="0" type="cond" truecount="0" falsecount="3"/>
-        <line num="16" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="23" count="0" type="cond" truecount="0" falsecount="1"/>
-        <line num="24" count="0" type="stmt"/>
-      </file>
-      <file name="UserRole.ts" path="/Users/edgar/Projects/Github/ArkusNexus-challenge/API/src/User/domain/UserRole.ts">
-        <metrics statements="7" coveredstatements="1" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="0" type="cond" truecount="0" falsecount="1"/>
-        <line num="3" count="0" type="stmt"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="11" count="0" type="cond" truecount="0" falsecount="1"/>
-        <line num="12" count="0" type="stmt"/>
-      </file>
-      <file name="Username.ts" path="/Users/edgar/Projects/Github/ArkusNexus-challenge/API/src/User/domain/Username.ts">
-        <metrics statements="11" coveredstatements="1" conditionals="4" coveredconditionals="0" methods="3" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="0" type="stmt"/>
-        <line num="3" count="0" type="stmt"/>
-        <line num="4" count="0" type="stmt"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="13" count="0" type="cond" truecount="0" falsecount="3"/>
-        <line num="14" count="0" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="20" count="0" type="cond" truecount="0" falsecount="1"/>
-        <line num="21" count="0" type="stmt"/>
-      </file>
-    </package>
-    <package name="User.useCases">
-      <metrics statements="28" coveredstatements="16" conditionals="4" coveredconditionals="0" methods="11" coveredmethods="7"/>
-      <file name="index.ts" path="/Users/edgar/Projects/Github/ArkusNexus-challenge/API/src/User/useCases/index.ts">
-        <metrics statements="28" coveredstatements="16" conditionals="4" coveredconditionals="0" methods="11" coveredmethods="7"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
-        <line num="16" count="1" type="stmt"/>
-        <line num="17" count="0" type="cond" truecount="0" falsecount="1"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="20" count="0" type="cond" truecount="0" falsecount="1"/>
-        <line num="22" count="0" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
-        <line num="32" count="1" type="stmt"/>
-        <line num="33" count="1" type="stmt"/>
-        <line num="34" count="0" type="cond" truecount="0" falsecount="1"/>
-        <line num="36" count="0" type="stmt"/>
-        <line num="37" count="0" type="stmt"/>
-        <line num="38" count="0" type="stmt"/>
-        <line num="39" count="0" type="stmt"/>
-        <line num="42" count="2" type="stmt"/>
-        <line num="43" count="2" type="stmt"/>
-        <line num="44" count="2" type="stmt"/>
-        <line num="45" count="0" type="cond" truecount="0" falsecount="1"/>
-        <line num="47" count="0" type="stmt"/>
-        <line num="54" count="2" type="stmt"/>
-        <line num="58" count="1" type="stmt"/>
-        <line num="60" count="1" type="stmt"/>
-        <line num="62" count="1" type="stmt"/>
-        <line num="71" count="1" type="stmt"/>
-      </file>
-    </package>
-    <package name="resources.config">
-      <metrics statements="2" coveredstatements="2" conditionals="10" coveredconditionals="10" methods="0" coveredmethods="0"/>
-      <file name="index.ts" path="/Users/edgar/Projects/Github/ArkusNexus-challenge/API/src/resources/config/index.ts">
-        <metrics statements="2" coveredstatements="2" conditionals="10" coveredconditionals="10" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="16" count="1" type="stmt"/>
-      </file>
-    </package>
-    <package name="shared.infraestructure.httpCode">
-      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="index.ts" path="/Users/edgar/Projects/Github/ArkusNexus-challenge/API/src/shared/infraestructure/httpCode/index.ts">
-        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="36" count="1" type="stmt"/>
-      </file>
-    </package>
-    <package name="shared.infraestructure.jwt">
-      <metrics statements="16" coveredstatements="6" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
-      <file name="sign.ts" path="/Users/edgar/Projects/Github/ArkusNexus-challenge/API/src/shared/infraestructure/jwt/sign.ts">
-        <metrics statements="16" coveredstatements="6" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="6" count="1" type="cond" truecount="0" falsecount="1"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
-        <line num="11" count="0" type="stmt"/>
-        <line num="12" count="0" type="cond" truecount="0" falsecount="1"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="18" count="0" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="28" count="0" type="stmt"/>
-        <line num="31" count="1" type="stmt"/>
-      </file>
-    </package>
-    <package name="shared.infraestructure.uuid">
-      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="generate.ts" path="/Users/edgar/Projects/Github/ArkusNexus-challenge/API/src/shared/infraestructure/uuid/generate.ts">
-        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-      </file>
-    </package>
+<coverage generated="1686952125334" clover="3.2.0">
+  <project timestamp="1686952125334" name="All files">
+    <metrics statements="69" coveredstatements="67" conditionals="18" coveredconditionals="17" methods="20" coveredmethods="18" elements="107" coveredelements="102" complexity="0" loc="69" ncloc="69" packages="1" files="6" classes="6"/>
+    <file name="UserEmail.ts" path="/Users/edgarfigueroa/Projects/Challenges/ArkusNexus/CRUD/API/src/User/domain/UserEmail.ts">
+      <metrics statements="13" coveredstatements="13" conditionals="4" coveredconditionals="4" methods="5" coveredmethods="3"/>
+      <line num="2" count="2" type="stmt"/>
+      <line num="3" count="7" type="stmt"/>
+      <line num="4" count="7" type="stmt"/>
+      <line num="5" count="6" type="stmt"/>
+      <line num="7" count="5" type="stmt"/>
+      <line num="8" count="5" type="stmt"/>
+      <line num="9" count="5" type="stmt"/>
+      <line num="11" count="2" type="stmt"/>
+      <line num="16" count="7" type="cond" truecount="3" falsecount="0"/>
+      <line num="17" count="1" type="stmt"/>
+      <line num="22" count="6" type="stmt"/>
+      <line num="24" count="6" type="cond" truecount="1" falsecount="0"/>
+      <line num="25" count="1" type="stmt"/>
+    </file>
+    <file name="UserEntity.ts" path="/Users/edgarfigueroa/Projects/Challenges/ArkusNexus/CRUD/API/src/User/domain/UserEntity.ts">
+      <metrics statements="17" coveredstatements="16" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+      <line num="2" count="1" type="stmt"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="4" count="1" type="stmt"/>
+      <line num="5" count="1" type="stmt"/>
+      <line num="6" count="1" type="stmt"/>
+      <line num="14" count="1" type="stmt"/>
+      <line num="15" count="3" type="stmt"/>
+      <line num="16" count="3" type="stmt"/>
+      <line num="17" count="3" type="stmt"/>
+      <line num="18" count="3" type="stmt"/>
+      <line num="19" count="3" type="stmt"/>
+      <line num="20" count="3" type="stmt"/>
+      <line num="23" count="1" type="stmt"/>
+      <line num="27" count="1" type="stmt"/>
+      <line num="30" count="3" type="stmt"/>
+      <line num="33" count="3" type="stmt"/>
+      <line num="36" count="0" type="stmt"/>
+    </file>
+    <file name="UserId.ts" path="/Users/edgarfigueroa/Projects/Challenges/ArkusNexus/CRUD/API/src/User/domain/UserId.ts">
+      <metrics statements="9" coveredstatements="9" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
+      <line num="1" count="2" type="stmt"/>
+      <line num="2" count="6" type="stmt"/>
+      <line num="4" count="6" type="stmt"/>
+      <line num="5" count="5" type="stmt"/>
+      <line num="9" count="6" type="cond" truecount="3" falsecount="0"/>
+      <line num="10" count="1" type="stmt"/>
+      <line num="15" count="5" type="stmt"/>
+      <line num="16" count="5" type="cond" truecount="1" falsecount="0"/>
+      <line num="17" count="1" type="stmt"/>
+    </file>
+    <file name="UserPassword.ts" path="/Users/edgarfigueroa/Projects/Challenges/ArkusNexus/CRUD/API/src/User/domain/UserPassword.ts">
+      <metrics statements="12" coveredstatements="12" conditionals="4" coveredconditionals="4" methods="4" coveredmethods="4"/>
+      <line num="1" count="2" type="stmt"/>
+      <line num="2" count="8" type="stmt"/>
+      <line num="3" count="8" type="stmt"/>
+      <line num="4" count="7" type="stmt"/>
+      <line num="6" count="6" type="stmt"/>
+      <line num="8" count="6" type="stmt"/>
+      <line num="10" count="2" type="stmt"/>
+      <line num="15" count="8" type="cond" truecount="3" falsecount="0"/>
+      <line num="16" count="1" type="stmt"/>
+      <line num="21" count="7" type="stmt"/>
+      <line num="23" count="7" type="cond" truecount="1" falsecount="0"/>
+      <line num="24" count="1" type="stmt"/>
+    </file>
+    <file name="UserRole.ts" path="/Users/edgarfigueroa/Projects/Challenges/ArkusNexus/CRUD/API/src/User/domain/UserRole.ts">
+      <metrics statements="7" coveredstatements="6" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <line num="1" count="2" type="stmt"/>
+      <line num="2" count="4" type="cond" truecount="0" falsecount="1"/>
+      <line num="3" count="0" type="stmt"/>
+      <line num="6" count="4" type="stmt"/>
+      <line num="7" count="4" type="stmt"/>
+      <line num="11" count="4" type="cond" truecount="1" falsecount="0"/>
+      <line num="12" count="1" type="stmt"/>
+    </file>
+    <file name="Username.ts" path="/Users/edgarfigueroa/Projects/Challenges/ArkusNexus/CRUD/API/src/User/domain/Username.ts">
+      <metrics statements="11" coveredstatements="11" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
+      <line num="1" count="2" type="stmt"/>
+      <line num="2" count="6" type="stmt"/>
+      <line num="3" count="6" type="stmt"/>
+      <line num="4" count="5" type="stmt"/>
+      <line num="6" count="4" type="stmt"/>
+      <line num="8" count="2" type="stmt"/>
+      <line num="13" count="6" type="cond" truecount="3" falsecount="0"/>
+      <line num="14" count="1" type="stmt"/>
+      <line num="19" count="5" type="stmt"/>
+      <line num="20" count="5" type="cond" truecount="1" falsecount="0"/>
+      <line num="21" count="1" type="stmt"/>
+    </file>
   </project>
 </coverage>

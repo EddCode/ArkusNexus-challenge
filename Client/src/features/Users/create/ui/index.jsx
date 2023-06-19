@@ -1,11 +1,14 @@
 import { useRef, useState } from 'react'
 import { Modal } from 'antd'
 
+import { useUserCtx } from '@/app/context/user'
+
 import Button from '@/widgets/Button'
 import CreateUserForm from '@/widgets/CreateUserForm'
 import useCreate from '../lib/hooks/useCreate'
 
 function CreateUserModal () {
+  const { setUser, user: userState } = useUserCtx()
   const [isOpen, setIsOpen] = useState(false)
   const [confirmLoading, setConfirmLoading] = useState(false)
   const [error, setError] = useState(null)
@@ -43,6 +46,7 @@ function CreateUserModal () {
     submit(user)
       .then(() => {
         setConfirmLoading(false)
+        setUser([...userState, user])
         setIsOpen(false)
       })
       .catch((err) => {

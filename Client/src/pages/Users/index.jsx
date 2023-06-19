@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import UserTable from '@/features/Users/list'
 import UserDetails from '@/features/Users/details/ui'
 import { useAuth } from '@/app/context/auth'
+import UserProvider from '@/app/context/user'
 
 function User () {
   const { id } = useParams()
@@ -12,7 +13,11 @@ function User () {
     return <UserDetails id={ id || user.id}/>
   }
 
-  return <UserTable />
+  return (
+    <UserProvider>
+      <UserTable />
+    </UserProvider>
+  )
 }
 
 export default User

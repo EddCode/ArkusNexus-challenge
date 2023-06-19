@@ -1,3 +1,4 @@
+import { useUserCtx } from '@/app/context/user'
 import Table from '@/shared/components/Table'
 import CreateUserModal from '../../create/ui'
 import useGetUser from '../model/hook/useGetUser'
@@ -6,7 +7,8 @@ import columns from '../model/table'
 import { Actions, Container } from './Users.styles'
 
 function UserTable () {
-  const { users } = useGetUser()
+  useGetUser()
+  const { user } = useUserCtx()
 
   return (
     <Container>
@@ -15,7 +17,7 @@ function UserTable () {
           <CreateUserModal />
         </div>
       </Actions>
-      <Table columns={columns} data={users.data}/>
+      <Table columns={columns} data={user}/>
     </Container>
   )
 }
