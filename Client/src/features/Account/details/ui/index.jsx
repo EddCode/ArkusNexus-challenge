@@ -10,7 +10,7 @@ function UserDetails ({ id }) {
   const { submit } = useGetOneUser()
   const { data } = useQuery(['user'], getUserData)
 
-  const [userData, setAccount] = useState({ })
+  const [account, setAccount] = useState({ })
 
   useEffect(() => {
     data && setAccount(data)
@@ -28,18 +28,18 @@ function UserDetails ({ id }) {
   return (
     <DetailsWrapper>
       <Info>
-        <Title>{ userData?.name }</Title>
+        <Title>{ account?.name }</Title>
         <InfoTextWrapper>
           <label>Client:</label>
-          <span>{ userData.client }</span>
+          <span>{ account.client }</span>
         </InfoTextWrapper>
         <InfoTextWrapper>
           <label>Responsable:</label>
-          <span>{ userData.responsable }</span>
+          <span>{ account.responsable }</span>
         </InfoTextWrapper>
       </Info>
       <UpdateWrapper>
-        <UpdateForm user={userData} account={setAccount} />
+        <UpdateForm account={account} updateAccount={setAccount} />
       </UpdateWrapper>
     </DetailsWrapper>
   )

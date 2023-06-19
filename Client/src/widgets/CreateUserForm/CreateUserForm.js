@@ -7,7 +7,6 @@ export const InputGroup = style.div`
   flex-direction: column;
   align-items: flex-start;
   margin-bottom: 1.5em;
-
 `
 
 export const Label = style.label`

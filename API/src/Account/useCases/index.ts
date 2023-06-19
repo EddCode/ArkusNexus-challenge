@@ -47,12 +47,18 @@ function UserUseCase(repository: AccountRepository) {
     }
   }
 
-  const update = async (id: string, payload ): Promise<Object> => {
+  const update = async (id: string, payload: any ): Promise<Object> => {
     try {
       const account = await repository.getById(id)
       if (!account) throw new Error('Account not found')
 
-      await repository.update(id, payload)
+      const accountData = {}
+
+      payload.name && (accountData['name'] = payload.name)
+      payload.client && (accountData['client'] = payload.client)
+      payload.responsable && (accountData['responsable'] = payload.responsable)
+
+      await repository.update(id, accountData)
 
       return { ...payload }
     } catch (error: any) {

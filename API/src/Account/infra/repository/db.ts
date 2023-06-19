@@ -39,8 +39,8 @@ function MongoRepository (): AccountRepository {
     }))
   }
 
-  const update = async (id: string, user: any): Promise<void> => {
-    await Accounts.updateOne({ _id: id }, user)
+  const update = async (id: string, account: any): Promise<void> => {
+    await Accounts.updateOne({ _id: id }, account)
   }
 
   const remove = async (id: string): Promise<any> => {

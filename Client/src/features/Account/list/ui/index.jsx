@@ -6,6 +6,7 @@ import columns from '../model/table'
 import useGetAll from '../model/hooks/getAll'
 import { useEffect } from 'react'
 import { useAccountCtx } from '@/app/context/accounts'
+import CreateAccountModal from '../../create/ui'
 
 function Accounts () {
   const { account, setAccount } = useAccountCtx()
@@ -20,7 +21,7 @@ function Accounts () {
     <Container>
       <Actions>
         <div>
-            hello
+          <CreateAccountModal />
         </div>
       </Actions>
       <Table columns={columns} data={account}/>

@@ -1,5 +1,6 @@
-import { useRef, useState } from 'react'
 import PropTypes from 'prop-types'
+import { useRef, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import { AiOutlineLoading3Quarters } from 'react-icons/ai'
 import { Spin, message } from 'antd'
 
@@ -8,7 +9,8 @@ import Form, { Input, InputGroup, Label } from '@/widgets/Form/Form.styled'
 import Button from '@/widgets/Button'
 import useUpdate from '../lib/hooks/useUpdate'
 
-function UpdateForm ({ account, updateUser }) {
+function UpdateForm ({ account, updateAccount }) {
+  const { id } = useParams()
   const [messageApi, contextHolder] = message.useMessage()
   const { submit } = useUpdate()
 
@@ -26,14 +28,14 @@ function UpdateForm ({ account, updateUser }) {
 
     dataToUpdate[key] = event.target.value
 
-    updateUser(accountUpdated)
+    updateAccount(accountUpdated)
   }
 
   const handleClick = async event => {
     try {
       event.preventDefault()
       setIsLoading(true)
-      await submit(dataToUpdate, account.id)
+      await submit(dataToUpdate, id)
       messageApi.success('User updated')
       setIsLoading(false)
     } catch (error) {
@@ -72,7 +74,7 @@ UpdateForm.propTypes = {
     client: PropTypes.string,
     responsable: PropTypes.string
   }),
-  updateUser: PropTypes.func
+  updateAccount: PropTypes.func
 }
 
 export default UpdateForm
