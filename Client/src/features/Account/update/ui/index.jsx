@@ -46,8 +46,9 @@ function UpdateForm ({ account, updateAccount }) {
 
   const handleSelectChange = value => {
     const getIds = options.filter(option => value.includes(option.value)).map(option => ({ id: option.key, name: option.value }))
-    updateAccount({ ...account, accountMember: getIds })
-    dataToUpdate.teamMembers = getIds
+    const members = { ...account, accountMember: [...account.accountMember, ...getIds] }
+    updateAccount(members)
+    dataToUpdate.teamMembers = [...account.accountMember, ...getIds]
   }
 
   const handleClick = async event => {
@@ -82,7 +83,6 @@ function UpdateForm ({ account, updateAccount }) {
           <Label>Select a person</Label>
           <Select
             style={{ width: '100%' }}
-            mode="multiple"
             showSearch
             allowClear
             placeholder="Jhone, William"
