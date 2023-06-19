@@ -17,4 +17,19 @@ function useCreate () {
   }
 }
 
+export const useListUsers = () => {
+  const { fetcher } = useFetch()
+
+  const list = async () => {
+    try {
+      const { data } = await fetcher('user', { token: true, method: 'GET' })
+      return data
+    } catch (error) {
+      return Promise.reject(error)
+    }
+  }
+
+  return list
+}
+
 export default useCreate

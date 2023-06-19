@@ -1,19 +1,24 @@
-import { AccountEntity, AccountRepository } from '../domain/AccountRepository'
+import { AccountEntity, AccountMember, AccountRepository } from '../domain/AccountRepository'
 import Account from '../domain/AccountEntity'
 import generateUuid from '../../shared/infraestructure/uuid/generate'
 
 function UserUseCase(repository: AccountRepository) {
   
-  const create = async (accountInfo: { name: string, client: string, responsable: string }): Promise<AccountEntity> => {
+  const create = async (accountInfo: { name: string, client: string, responsable: string, accountMembers?: Array<AccountMember> }): Promise<AccountEntity> => {
     const account = Account()
                     .withId(generateUuid())
                     .withName(accountInfo.name)
                     .withClient(accountInfo.client)
                     .withResponsable(accountInfo.responsable)
-                    .build()
 
-    await repository.create({ ...account })
-    return account
+    if(accountInfo.accountMembers) {
+      account.withAccountMember(accountInfo.accountMembers)
+    }
+    
+    const accountCreated = account.build()
+
+    await repository.create({ ...accountCreated })
+    return accountCreated
   }
 
   const getAll = async (): Promise<AccountEntity[] > => {
@@ -24,7 +29,8 @@ function UserUseCase(repository: AccountRepository) {
         id: account.id,
         name: account.name,
         client: account.client,
-        responsable: account.responsable
+        responsable: account.responsable,
+        accountMember: account.accountMember
       }))
     } catch (error: any) {
       throw new Error(error.message)
@@ -40,7 +46,8 @@ function UserUseCase(repository: AccountRepository) {
         id: account.id,
         name: account.name,
         client: account.client,
-        responsable: account.responsable
+        responsable: account.responsable,
+        accountMember: account.accountMember
       }
     } catch (error: any) {
       throw new Error(error.message)
@@ -57,6 +64,7 @@ function UserUseCase(repository: AccountRepository) {
       payload.name && (accountData['name'] = payload.name)
       payload.client && (accountData['client'] = payload.client)
       payload.responsable && (accountData['responsable'] = payload.responsable)
+      payload.accountMembers && (accountData['teamsQuery'] = payload.accountMembers)
 
       await repository.update(id, accountData)
 

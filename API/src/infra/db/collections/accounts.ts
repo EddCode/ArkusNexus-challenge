@@ -20,7 +20,7 @@ const AccountSchema = new Schema({
     required: [true, "Responsability Center is required"],
   },
   teamsQuery: {
-    type: String
+    type: Array
   },
 }, { timestamps: true, _id: false })
 

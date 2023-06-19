@@ -37,6 +37,12 @@ function UserDetails ({ id }) {
           <label>Responsable:</label>
           <span>{ account.responsable }</span>
         </InfoTextWrapper>
+        <InfoTextWrapper>
+          <label>Members:</label>
+          <span>{ account.accountMember?.map(member => (
+            <p key={member.id}>{ member.name }</p>
+          ))}</span>
+        </InfoTextWrapper>
       </Info>
       <UpdateWrapper>
         <UpdateForm account={account} updateAccount={setAccount} />

@@ -6,9 +6,15 @@ export interface AccountRepository {
   remove: (id: string) => Promise<void>
 }
 
+export type AccountMember = {
+  id: string;
+  name: string;
+}
+
 export interface AccountEntity {
   id?: string;
   name?: string;
   client?: string;
   responsable?: string;
+  accountMember?: Array<AccountMember>
 }

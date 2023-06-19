@@ -14,6 +14,7 @@ function CreateAccountModal () {
   const accountName = useRef(null)
   const clientName = useRef(null)
   const responsable = useRef(null)
+  const teamMembers = useRef(null)
 
   const { update } = useCreate()
 
@@ -37,6 +38,8 @@ function CreateAccountModal () {
       setConfirmLoading(false)
       return
     }
+
+    accountData.teamMembers = teamMembers.current
 
     update(accountData).then(data => {
       setConfirmLoading(false)
@@ -63,7 +66,13 @@ function CreateAccountModal () {
         confirmLoading={confirmLoading}
         onCancel={handleCancel}
       >
-        <CreateAccountForm accountName={accountName} clientName={clientName} responsable={responsable} error={error} />
+        <CreateAccountForm
+          accountName={accountName}
+          clientName={clientName}
+          responsable={responsable}
+          error={error}
+          teamMembers={teamMembers}
+        />
       </Modal>
     </>
   )

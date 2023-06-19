@@ -1,4 +1,4 @@
-import { AccountEntity } from './AccountRepository'
+import { AccountEntity, AccountMember } from './AccountRepository'
 import AccountClient from './AccountClient'
 import AccountId from './AccountId'
 import AccountName from './AccountName'
@@ -10,6 +10,7 @@ export type AccountEntityAccions = {
   withName: (name: string) => AccountEntityAccions
   withClient: (clinet: string) => AccountEntityAccions
   withResponsable: (responsable: string) => AccountEntityAccions
+  withAccountMember: (accountMember: Array<AccountMember>) => AccountEntityAccions
 }
 
 export default function Account(): AccountEntityAccions {
@@ -30,6 +31,10 @@ export default function Account(): AccountEntityAccions {
     },
     withResponsable: function(name: string): AccountEntityAccions {
       account.responsable = new AccountResponable(name).responsable
+      return this
+    },
+    withAccountMember: function(accountMember: Array<AccountMember>): AccountEntityAccions {
+      account.accountMember = accountMember
       return this
     },
     build: (): AccountEntity => (account)

@@ -4,14 +4,15 @@ import { AccountEntity, AccountRepository } from "../../domain/AccountRepository
 function MongoRepository (): AccountRepository {
   const create = async (account: any): Promise<void> => {
     try {
+      console.log({ account: account.accountMember })
       const AccountData = new Accounts({
         _id: account.id,
         accountName: account.name,
         clientName: account.client,
         responsabilityCenter: account.responsable,
-        teamsQuery: ''
+        teamsQuery: account.accountMember || []
       })
-      console.log({ AccountData })
+
       await AccountData.save()
     } catch (error: any) {
       return Promise.reject(error.message)
@@ -25,7 +26,8 @@ function MongoRepository (): AccountRepository {
       id: result?._id,
       name: result?.accountName,
       client: result?.clientName,
-      responsable: result?.responsabilityCenter
+      responsable: result?.responsabilityCenter,
+      accountMember: result?.teamsQuery
     }
   }
 
@@ -35,7 +37,8 @@ function MongoRepository (): AccountRepository {
       id: account._id,
       name: account.accountName,
       client: account.clientName,
-      responsable: account.responsabilityCenter
+      responsable: account.responsabilityCenter,
+      accountMember: account?.teamsQuery
     }))
   }
 

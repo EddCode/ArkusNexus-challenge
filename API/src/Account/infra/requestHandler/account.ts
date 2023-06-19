@@ -10,12 +10,12 @@ const useCases = UserUseCase(repository)
 
 export async function create(req: Request, res: Response) {
   try {
-    const { name, client, responsable } = req.body
-    const user = await useCases.create({ name, client, responsable })
+    const { name, client, responsable, teamMembers } = req.body
+    const account = await useCases.create({ name, client, responsable, accountMembers: teamMembers })
 
     res.status(httpCode.CREATED.status).json({
       message: 'User created',
-      data: user
+      data: account
     })
   } catch (error: any) {
     const { status, message} = CreatedErrorHandler(error)
@@ -44,14 +44,15 @@ export async function update(req: Request, res: Response) {
     const { 
       name, 
       client,
-      responsasble
+      responsasble,
+      teamMembers
     } = req.body
 
     if (!id) {
       throw new Error('Id is required')
     }   
 
-    const user = await useCases.update(id, { name, client, responsasble })
+    const user = await useCases.update(id, { name, client, responsasble, accountMembers: teamMembers })
 
     res.status(httpCode.OK.status).json({ message: httpCode.OK.message, data: { id, ...user } })
   } catch (error: any) {
