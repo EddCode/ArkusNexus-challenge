@@ -12,6 +12,7 @@ async function connectDb() {
     }} = config
 
     const mongoUri = `mongodb://${username}:${password}@${url}/${name}?authSource=admin`
+    console.log(mongoUri)
     const connectOptions = {
       useNewUrlParser: true,
       useUnifiedTopology: true,

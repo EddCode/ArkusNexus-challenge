@@ -18,9 +18,8 @@ function isPasswordDefined (password: string) {
 }
 
 function isPasswordValid (password: string) {
-  const passwordRegex = new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])')
 
-  if (!passwordRegex.test(password)) {
+  if (password.length < 3) {
     throw new Error('Invalid password')
   }
 }

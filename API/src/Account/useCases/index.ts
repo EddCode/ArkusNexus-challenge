@@ -1,6 +1,7 @@
 import { AccountEntity, AccountMember, AccountRepository } from '../domain/AccountRepository'
 import Account from '../domain/AccountEntity'
 import generateUuid from '../../shared/infraestructure/uuid/generate'
+import AccountLogsAggregate from '../../AccountLogsAggragate'
 
 function UserUseCase(repository: AccountRepository) {
   
@@ -13,6 +14,7 @@ function UserUseCase(repository: AccountRepository) {
 
     if(accountInfo.accountMembers) {
       account.withAccountMember(accountInfo.accountMembers)
+      AccountLogsAggregate(accountInfo.name).addLog('Add', accountInfo.accountMembers)
     }
     
     const accountCreated = account.build()
@@ -64,7 +66,11 @@ function UserUseCase(repository: AccountRepository) {
       payload.name && (accountData['name'] = payload.name)
       payload.client && (accountData['client'] = payload.client)
       payload.responsable && (accountData['responsable'] = payload.responsable)
-      payload.accountMembers && (accountData['teamsQuery'] = payload.accountMembers)
+
+      if (payload.accountMembers) {
+        accountData['teamsQuery'] = payload.accountMembers
+        AccountLogsAggregate(payload.name).addLog('Add', payload.accountMembers)
+      }
 
       await repository.update(id, accountData)
 
